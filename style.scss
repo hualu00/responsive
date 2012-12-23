@@ -1,0 +1,126 @@
+@mixin vendorize($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+@mixin respond-to($mq) {
+  @if $mq == middle {
+    @media screen and (min-width: 401px) { @content }
+  }
+}
+@mixin clear() {
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+@font-face {
+  font-family: 'Modernpics';
+  src: url('fonts/modern-pictograms/modernpics.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  @include vendorize(box-sizing, border-box);
+}
+
+.is_open {
+ 
+}
+
+.main-content {
+  height: 200px;
+  background: green;
+}
+
+
+.isNav {
+	display: inline-block;
+  cursor: pointer;
+  @include respond-to (middle) {
+    display: none;
+  }
+  span:before {
+    font-family: "Modernpics", sans-serif;
+    content: "Z";
+    font-size: 30px;
+  }
+}
+
+.nav {
+	display: none;
+	overflow: hidden;
+	@include clear();
+  @include respond-to (middle) {
+    display: block !important;
+  }
+}
+
+.nav li {
+	padding: 5px 10px;
+	background: #1570A6;
+	margin-bottom: 2px;
+	a {
+		color: white;
+		text-decoration: none;
+    @include respond-to (middle) {
+      &:hover {
+        text-decoration: underline;
+      }
+      color: #000000;
+    }
+	}
+  @include respond-to (middle) {
+    float: left;
+    padding: 0 2%;
+    background: #FFFFFF;
+  }
+}
+
+.content {
+  background: green;
+}
+
+.slide {
+  position: relative;
+  overflow: hidden;
+  ul {
+    position: relative;
+    li {
+      float: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .currentSlide {
+      float: left;
+      position: relative;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+.shopping ul{
+  overflow: hidden;
+  li {
+    float: left;
+    width: 100%;
+    @include respond-to (middle) {
+      width: 50%;
+    }
+  }
+}
+
+.shopping img {
+  width: 100%;
+}
