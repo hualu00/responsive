@@ -125,3 +125,10 @@
 .shopping img {
   width: 100%;
 }
+
+@include respond-to (middle) {
+  body:after {
+    content: 'middlescreen';
+    display: none;
+  }
+}
