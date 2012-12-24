@@ -18,7 +18,7 @@
 .isNav {
   display: inline-block;
   cursor: pointer; }
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 25em) {
     .isNav {
       display: none; } }
   .isNav span:before {
@@ -27,8 +27,12 @@
     font-size: 30px; }
 
 .nav {
-  display: none;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s; }
   .nav:before, .nav:after {
     content: "\0020";
     display: block;
@@ -36,9 +40,9 @@
     overflow: hidden; }
   .nav:after {
     clear: both; }
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 25em) {
     .nav {
-      display: block !important; } }
+      height: auto !important; } }
 
 .nav li {
   padding: 5px 10px;
@@ -47,12 +51,12 @@
   .nav li a {
     color: white;
     text-decoration: none; }
-    @media screen and (min-width: 401px) {
+    @media screen and (min-width: 25em) {
       .nav li a {
         color: #000000; }
         .nav li a:hover {
           text-decoration: underline; } }
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 25em) {
     .nav li {
       float: left;
       padding: 0 2%;
@@ -75,6 +79,7 @@
       float: left;
       position: relative; }
   .slide img {
+    width: 100%;
     max-width: 100%; }
 
 .shopping ul {
@@ -82,7 +87,7 @@
   .shopping ul li {
     float: left;
     width: 100%; }
-    @media screen and (min-width: 401px) {
+    @media screen and (min-width: 25em) {
       .shopping ul li {
         width: 50%; } }
 
