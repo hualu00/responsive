@@ -92,22 +92,26 @@
 .slide {
   position: relative;
   overflow: hidden;
+  
   ul {
     position: relative;
     li {
-      float: left;
       position: absolute;
-      top: 0;
       left: 0;
+      right: 0;
     }
     .currentSlide {
-      float: left;
       position: relative;
     }
   }
   img {
+    display: block;
     max-width: 100%;
   }
+}
+
+.slide_item {
+  display: block;
 }
 
 .shopping ul{

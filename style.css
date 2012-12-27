@@ -71,15 +71,17 @@
   .slide ul {
     position: relative; }
     .slide ul li {
-      float: left;
       position: absolute;
-      top: 0;
-      left: 0; }
+      left: 0;
+      right: 0; }
     .slide ul .currentSlide {
-      float: left;
       position: relative; }
   .slide img {
+    display: block;
     max-width: 100%; }
+
+.slide_item {
+  display: block; }
 
 .shopping ul {
   overflow: hidden; }
