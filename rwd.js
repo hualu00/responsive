@@ -2,8 +2,10 @@ $(function () {
   var isNav = $("#isNav"),
   nav = $("#nav"),
   slide = $("#slide"),
-  slideItem = slide.find("li"),
-  size = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+  slideItem = slide.find(".slideUl > li"),
+  size = window.getComputedStyle(document.body, ':after').getPropertyValue('content'),
+  prevSlide = $(".slide_prev"),
+  nextSlide = $(".slide_next");
   nav.height(0);
   isNav.on("click", function () { //add click hanlder for navigation
     var navHeight = nav.height();
@@ -39,6 +41,7 @@ $(function () {
     }
   });
   $(".slide_item").on("click", function (e) { // when each slide is clicked
+    console.info("clicked");
     e.preventDefault();
   });
   slideItem.eq(0).addClass("currentSlide");
@@ -47,5 +50,45 @@ $(function () {
     //console.info(size, size == "middlescreen");
     // Load some more content.
   }
+
+  var i = 0;
+  prevSlide.on("click", function (e) {
+    //
+    if(i > 0) {
+      i -= 1;
+      slideItem.removeClass('currentSlide');
+      slideItem.eq(i).addClass('currentSlide');  
+      $(".slide_Mcontrol li").removeClass("currentLi");
+      $(".slide_Mcontrol li").eq(i).addClass("currentLi");
+    }
+  });
+
+  nextSlide.on("click", function (e) {
+    if(i < slideItem.length - 1) {
+      i += 1;
+      slideItem.removeClass('currentSlide');
+      slideItem.eq(i).addClass('currentSlide');
+      $(".slide_Mcontrol li").removeClass("currentLi");
+      $(".slide_Mcontrol li").eq(i).addClass("currentLi");
+    }
+  });i
+
+  var length = slideItem.length;
+  var height = (100 / length) + "%";
+  var slide_Mcontrol = $(".slide_Mcontrol");
+  for(var j = 0; j < length; j += 1) {
+    var li = "<li style='height:"+height+";'>" + (j + 1) + "</li>";
+    $(li).appendTo(slide_Mcontrol.find('ul'));
+  }
+
+
+  $(".slide_Mcontrol li").eq(0).addClass("currentLi");
+  $(".slide_Mcontrol li").on("click", function () {
+    $(".slide_Mcontrol li").removeClass("currentLi");
+    slideItem.removeClass('currentSlide');
+    slideItem.eq($(this).index()).addClass('currentSlide');
+    $(this).addClass("currentLi");
+    i = $(this).index();
+  })
   
 });

@@ -2,8 +2,10 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
 	<title>RWD</title>
   <link rel="stylesheet" href="../resource/base.css" />
+  <link rel="stylesheet" href="iconfonts.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
   <script type="text/javascript" src="../resource/jquery.min.js"></script>
@@ -15,7 +17,7 @@
 <body>
 	<div class="header">
     <div class="isNav" id="isNav">
-      <span></span>
+      <span class="fontawesome-list"></span>
     </div>
 		<ul class="nav" id="nav">
 			<li><a href="#">HTML</a></li>
@@ -27,67 +29,26 @@
   </div>
   <div class="content">
     <div class="slide" id="slide">
-      <ul>
+      <ul class='slideUl'>
         <li><a href="#" class="slide_item"><img src="images/1.jpg" /></a></li>
         <li><a href="#" class="slide_item"><img src="images/2.jpg" /></a></li>
         <li><a href="#" class="slide_item"><img src="images/3.jpg" /></a></li>
         <li><a href="#" class="slide_item"><img src="images/4.jpg" /></a></li>
       </ul>
-    </div><!--
-    <div class="shopping">
-      <ul>
-        <li>
-          <div class="shop_item">
-            <img src="images/2.jpg" alt="" />
-          </div>
-        </li>
-        <li>
-          <div class="shop_item">
-            <img src="images/3.jpg" alt="" />
-          </div>
-        </li>
-        <li>
-          <div class="shop_item">
-            <img src="images/4.jpg" alt="" />
-          </div>
-        </li>
-        <li>
-          <div class="shop_item">
-            <img src="images/2.jpg" alt="" />
-          </div>
-        </li>
-        <li>
-          <div class="shop_item">
-            <img src="images/3.jpg" alt="" />
-          </div>
-        </li>
-        <li>
-          <div class="shop_item">
-            <img src="images/4.jpg" alt="" />
-          </div>
-        </li>
-        <li>
-          <div class="shop_item">
-            <img src="images/2.jpg" alt="" />
-          </div>
-        </li>
-        <li>
-          <div class="shop_item">
-            <img src="images/3.jpg" alt="" />
-          </div>
-        </li>
-        <li>
-          <div class="shop_item">
-            <img src="images/4.jpg" alt="" />
-          </div>
-        </li>
-        <li>
-          <div class="shop_item">
-            <img src="images/2.jpg" alt="" />
-          </div>
-        </li>
-      </ul>
-    </div>-->
+      <div class="slide_control">
+        <div class="slide_prev">
+          ← Prev
+        </div>
+        <div class="slide_next">
+          Next →
+        </div>
+      </div>
+      <div class="slide_Mcontrol">
+        <ul>
+          
+        </ul>
+      </div>
+    </div>
   </div>
   <div class="footer">
     <p>Copyright</p>

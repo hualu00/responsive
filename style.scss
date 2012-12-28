@@ -32,6 +32,11 @@
   @include vendorize(box-sizing, border-box);
 }
 
+[class*="fontawesome-"]:before {
+  font-family: 'fontawesome', sans-serif;
+  font-size: 1.5em;
+}
+
 .is_open {
  
 }
@@ -47,11 +52,6 @@
   cursor: pointer;
   @include respond-to (middle) {
     display: none;
-  }
-  span:before {
-    font-family: "Modernpics", sans-serif;
-    content: "Z";
-    font-size: 30px;
   }
 }
 
@@ -79,22 +79,27 @@
     }
 	}
   @include respond-to (middle) {
+    width: 20%;
     float: left;
     padding: 0 2%;
     background: #FFFFFF;
+    border-right: 1px solid #000000;
+    
+    &:last-child{
+      border-right: 0px solid #000000;
+    }
   }
 }
 
 .content {
-  background: green;
+  
 }
 
 .slide {
   position: relative;
-  overflow: hidden;
-  
-  ul {
+  .slideUl {
     position: relative;
+    overflow: hidden;
     li {
       position: absolute;
       left: 0;
@@ -112,6 +117,56 @@
 
 .slide_item {
   display: block;
+}
+
+.slide_control {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 1em;
+  @include clear();
+  @include respond-to (middle) {
+    display: none;
+  }
+  &>div {
+    float: left;
+    width: 50%;
+    padding: 1em;
+  }
+  .slide_prev {
+    border-right: 1px solid black;
+  }
+  .slide_next {
+    text-align: right;
+  }
+}
+
+.slide_Mcontrol {
+  display: none;
+  @include respond-to (middle) {
+    display: block;
+    height: 100%;
+    width: 5%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: .8;
+    ul{
+      height: 100%;
+    }
+    li {
+      background: gray;
+      text-align: center;
+      padding-top: 2em;
+      border-bottom: 1px solid black;
+      &:last-child{
+        border: none;
+      }
+    }
+    .currentLi {
+      color: #FFFFFF;
+      background: #3382EF;
+    }
+  }
 }
 
 .shopping ul{

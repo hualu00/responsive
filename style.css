@@ -11,6 +11,10 @@
   -o-box-sizing: border-box;
   box-sizing: border-box; }
 
+[class*="fontawesome-"]:before {
+  font-family: 'fontawesome', sans-serif;
+  font-size: 1.5em; }
+
 .main-content {
   height: 200px;
   background: green; }
@@ -21,10 +25,6 @@
   @media screen and (min-width: 25em) {
     .isNav {
       display: none; } }
-  .isNav span:before {
-    font-family: "Modernpics", sans-serif;
-    content: "Z";
-    font-size: 30px; }
 
 .nav {
   overflow: hidden;
@@ -58,23 +58,24 @@
           text-decoration: underline; } }
   @media screen and (min-width: 25em) {
     .nav li {
+      width: 20%;
       float: left;
       padding: 0 2%;
-      background: #FFFFFF; } }
-
-.content {
-  background: green; }
+      background: #FFFFFF;
+      border-right: 1px solid #000000; }
+      .nav li:last-child {
+        border-right: 0px solid #000000; } }
 
 .slide {
-  position: relative;
-  overflow: hidden; }
-  .slide ul {
-    position: relative; }
-    .slide ul li {
+  position: relative; }
+  .slide .slideUl {
+    position: relative;
+    overflow: hidden; }
+    .slide .slideUl li {
       position: absolute;
       left: 0;
       right: 0; }
-    .slide ul .currentSlide {
+    .slide .slideUl .currentSlide {
       position: relative; }
   .slide img {
     display: block;
@@ -82,6 +83,53 @@
 
 .slide_item {
   display: block; }
+
+.slide_control {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 1em; }
+  .slide_control:before, .slide_control:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .slide_control:after {
+    clear: both; }
+  @media screen and (min-width: 25em) {
+    .slide_control {
+      display: none; } }
+  .slide_control > div {
+    float: left;
+    width: 50%;
+    padding: 1em; }
+  .slide_control .slide_prev {
+    border-right: 1px solid black; }
+  .slide_control .slide_next {
+    text-align: right; }
+
+.slide_Mcontrol {
+  display: none; }
+  @media screen and (min-width: 25em) {
+    .slide_Mcontrol {
+      display: block;
+      height: 100%;
+      width: 5%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: .8; }
+      .slide_Mcontrol ul {
+        height: 100%; }
+      .slide_Mcontrol li {
+        background: gray;
+        text-align: center;
+        padding-top: 2em;
+        border-bottom: 1px solid black; }
+        .slide_Mcontrol li:last-child {
+          border: none; }
+      .slide_Mcontrol .currentLi {
+        color: #FFFFFF;
+        background: #3382EF; } }
 
 .shopping ul {
   overflow: hidden; }
